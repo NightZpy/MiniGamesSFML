@@ -365,6 +365,6 @@ FodyWeavers.xsd
 
 .idea/
 CppProperties.json
-MiniGamesSFML.sln
-MiniGamesSFML.vcxproj
-MiniGamesSFML.vcxproj.filters
+*.sln
+*.vcxproj
+*.vcxproj.filters

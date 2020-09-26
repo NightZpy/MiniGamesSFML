@@ -9,26 +9,25 @@
 #ifndef app_hpp
 #define app_hpp
 
-#include <SFML/Graphics.hpp>
-#include <time.h>
-#include <stdio.h>
-
+#include <vector>
 
 namespace Tetris{
     class Board {
     public:
-        Board(int rows, int cols);
+        Board(int rows, int cols, int deadCellFlag, int emptyCellFlag);
         Board();
-        
-        std::vector<std::vector<int>> initFigures();
-        void draw();
+        void updateCurrentFigure(Figure &figure);
         
         ~Board();
     private:
-        int rows, cols;
-        int** field;
-        sf::Vector2<int> *figurePositionA, *figurePositionB;
-        std::vector<std::vector<int>> figures;
+        int emptyCellFlag;
+        int deadCellFlag;
+        int rows;
+        int cols;
+        std::vector<std::vector<int>> field;
+
+        void initField();
+        void draw();
     };
 }
 #endif /* app_hpp */

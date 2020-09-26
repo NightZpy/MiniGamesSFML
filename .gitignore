@@ -368,3 +368,6 @@ CppProperties.json
 *.sln
 *.vcxproj
 *.vcxproj.filters
+
+MiniGamesSFML.rc
+resource.h

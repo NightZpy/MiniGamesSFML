@@ -6,6 +6,7 @@
 //
 
 #include "Board.hpp"
+#include <SFML/Graphics.hpp>
 
 namespace Tetris {
 
@@ -19,15 +20,28 @@ namespace Tetris {
         
         return array;
     }
+    
+    Board::Board(int rows, int cols, int deadCellFlag, int emptyCellFlag)
+    {
+        this->rows = rows;
+        this->cols = cols;
+        this->deadCellFlag = deadCellFlag;
+        this->emptyCellFlag = emptyCellFlag;
+        initField();
+    }
 
     Board::Board()
     {
         rows = 20;
         cols = 20;
-        field = initArray2D<int>(cols, rows, 0);
-        figurePositionA = new sf::Vector2<int>[4];
-        figurePositionB = new sf::Vector2<int>[4];
-        figures = initFigures();
+        deadCellFlag = -1;
+        emptyCellFlag = 0;
+        initField();
+    }
+
+    void Board::initField()
+    {
+        field = std::vector<std::vector<int>>(rows, std::vector<int>(cols, emptyCellFlag));
     }
 
 
@@ -45,4 +59,9 @@ namespace Tetris {
     }
 
 }
+
+1, 0
+1, 1
+1, 2
+1, 3
 

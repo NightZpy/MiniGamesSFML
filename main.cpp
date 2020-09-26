@@ -11,6 +11,7 @@
 #define SCREEN_WIDTH 400
 #define SCREEN_HEIGHT 600
 
+
 struct Figure {
     std::vector<sf::Sprite> blocks;
     sf::Vector2<int> quad1;
